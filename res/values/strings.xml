@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_graph">Graph</string>
     <string name="title_activity_range_graph">Range Graph</string>
+    <string name="title_activity_firebase_data">FirebaseData</string>
+    <string name="title_activity_firebase">Firebase</string>
 
 </resources>

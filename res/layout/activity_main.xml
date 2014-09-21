@@ -9,42 +9,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.hackgt.MainActivity"
     android:background="@android:color/black" >
+	<TextView
+        android:id="@+id/spaceholder"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content" />
 	
-	<kankan.wheel.widget.WheelView
-	    android:id="@+id/city"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_gravity="center_horizontal" />
-	
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="sendMessage"
-        android:text="Set Temperature" 
-        android:textColor="#FFFFFF" />
-    
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="setTurnOffTime"
-        android:text="Set Turn Off Time"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="displayRangeGraph"
-        android:text="View Range Graph" 
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:onClick="displayGraph"
-        android:text="View Graph"
-        android:textColor="#FFFFFF" />
-    
 	<LinearLayout
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content" >
@@ -65,4 +34,37 @@
 	        android:orientation="horizontal"
 	        android:textColor="#33B5E5" />
     </LinearLayout>
+	
+	<kankan.wheel.widget.WheelView
+	    android:id="@+id/city"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal" />
+	
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" >
+	    <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="sendMessage"
+	        android:text="Set Temperature" 
+	        android:textColor="#FFFFFF" />
+	    
+	    <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="setTurnOffTime"
+	        android:text="Set Turn Off Time"
+	        android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="displayGraph"
+        android:text="View Graph"
+        android:textColor="#FFFFFF" />
+
 </LinearLayout>

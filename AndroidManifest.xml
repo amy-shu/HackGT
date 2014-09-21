@@ -33,11 +33,18 @@
             android:name=".RangeGraph"
             android:label="@string/title_activity_range_graph" >
         </activity>
-        <activity android:name=".HoloWheelActivity" android:label="Holo Wheel">
+        <activity
+            android:name=".HoloWheelActivity"
+            android:label="Holo Wheel" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="kankan.wheel.extended.WHEEL_SAMPLE"/>
+
+                <category android:name="kankan.wheel.extended.WHEEL_SAMPLE" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".FirebaseData"
+            android:label="@string/title_activity_firebase" >
         </activity>
     </application>
 

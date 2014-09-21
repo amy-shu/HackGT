@@ -1,7 +1,5 @@
 package com.example.hackgt;
 
-import java.util.Map;
-
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.adapters.AbstractWheelTextAdapter;
 import android.content.Context;
@@ -14,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.client.DataSnapshot;
@@ -45,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
 		temperatures.setCurrentItem(15);
 		
 		targetTemp = (TextView)findViewById(R.id.current_target_temp);
-		targetTemp.setText("Target Temperature: None");
+		targetTemp.setText("Target Temp: None");
 		turnOffTime = (TextView)findViewById(R.id.turn_off_time);
 		turnOffTime.setText("Turn Off Time: None");
     }
@@ -79,7 +76,6 @@ public class MainActivity extends ActionBarActivity {
 		protected CharSequence getItemText(int index) {
 			return " " + Integer.toString(degrees[index]) + "\u00b0" + " ";
 		}
-		
 
 	}
 
@@ -105,27 +101,10 @@ public class MainActivity extends ActionBarActivity {
     /** Called when the user clicks the Send button */
     public void sendMessage(View view) {	
     	int temperature = temperatures.getCurrentItem();
-    	Time now = new Time();
-    	now.setToNow();
-    	String date = now.month + "-" + now.monthDay + "-" + now.year;
-//    	try {
-//    		message = Integer.parseInt(editText.getText().toString());
-//    	} catch (NumberFormatException name) {
-//    		
-//    	}
     	myFirebaseRef.child("target_temp").setValue(degrees[temperature]);
-    	myFirebaseRef.child("target_temp").addValueEventListener(new ValueEventListener() {
-
-    		  @Override
-    		  public void onDataChange(DataSnapshot snapshot) {
-    			  System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
-    			  targetTemp.setText("Target Temperature: " + snapshot.getValue());
-    		  }
-
-    		  @Override public void onCancelled(FirebaseError error) { }
-    	});
-
+    	targetTemp.setText("Target Temp: " + degrees[temperature]);
     }
+    
     public void setTurnOffTime(View view) {
     	String nextAlarm = "";
     	try{
@@ -139,8 +118,9 @@ public class MainActivity extends ActionBarActivity {
     		turnOffTime.setText("Turn Off Time: " + nextAlarm);
     	}
     }
+    
     public void displayGraph(View view) {
-    	Intent intent = new Intent(this, Graph.class);
+    	Intent intent = new Intent(this, FirebaseData.class);
     	startActivity(intent);	
     }
     
