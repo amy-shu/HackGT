@@ -14,30 +14,55 @@
 	    android:id="@+id/city"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_gravity="center_horizontal"/>
+	    android:layout_gravity="center_horizontal" />
 	
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="sendMessage"
-        android:text="Set Temperature" />
+        android:text="Set Temperature" 
+        android:textColor="#FFFFFF" />
+    
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="setTurnOffTime"
-        android:text="Set Turn Off Time" />
+        android:text="Set Turn Off Time"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="displayRangeGraph"
-        android:text="View Range Graph" />
+        android:text="View Range Graph" 
+        android:textColor="#FFFFFF" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:onClick="displayGraph"
-        android:text="View Graph" />
+        android:text="View Graph"
+        android:textColor="#FFFFFF" />
+    
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" >
 
+	    <TextView
+	        android:id="@+id/current_target_temp"
+	        android:layout_width="180dp"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:orientation="horizontal"
+	        android:textColor="#33B5E5" />
+
+	    <TextView
+	        android:id="@+id/turn_off_time"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:orientation="horizontal"
+	        android:textColor="#33B5E5" />
+    </LinearLayout>
 </LinearLayout>
